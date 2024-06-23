@@ -6,6 +6,7 @@ const BirthdateGenerator = () => {
   const [numberOfBirthdates, setNumberOfBirthdates] = useState(0);
   const [ageRange, setAgeRange] = useState([19, 23]);
   const [birthdates, setBirthdates] = useState([]);
+  const [showOutput, setShowOutput] = useState(false);
 
   const generateBirthdates = () => {
     const birthdateList = [];
@@ -28,6 +29,7 @@ const BirthdateGenerator = () => {
       birthdateList.push(formattedDate);
     }
     setBirthdates(birthdateList);
+    setShowOutput(true);
   };
 
   const copyToClipboard = () => {
@@ -66,15 +68,17 @@ const BirthdateGenerator = () => {
         </div>
         <button onClick={generateBirthdates}>Generate Birthdates</button>
       </div>
-      <div className="card output-card">
-        <h2>Generated Birthdates</h2>
-        <div className="output">
-          {birthdates.map((birthdate, index) => (
-            <div key={index}>{birthdate}</div>
-          ))}
+      {showOutput && (
+        <div className="card output-card">
+          <h2>Generated Birthdates</h2>
+          <div className="output">
+            {birthdates.map((birthdate, index) => (
+              <div key={index}>{birthdate}</div>
+            ))}
+          </div>
+          <button onClick={copyToClipboard}>Copy to Clipboard</button>
         </div>
-        <button onClick={copyToClipboard}>Copy to Clipboard</button>
-      </div>
+      )}
     </div>
   );
 };

@@ -3,10 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  background-color: #282c34; /* Match the surrounding background */
-  min-height: 100vh; /* Ensure it covers full height */
-  color: white; /* Change text color to white */
+  background-color: #282c34;
+  color: white;
+  overflow: hidden;
 }
 
 h2 {
@@ -14,7 +13,7 @@ h2 {
 }
 
 .card {
-  background: #333; /* Dark background for the card */
+  background: #333;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -61,8 +60,8 @@ button:hover {
 .output {
   margin-top: 20px;
   text-align: left;
-  max-height: 400px; /* Limit the height of the output section */
-  overflow-y: auto; /* Add scroll if the content is too long */
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .horizontal-slider {
@@ -72,9 +71,9 @@ button:hover {
 }
 
 .thumb {
-  height: 15px; /* Adjust the height to make it smaller */
-  width: 15px; /* Adjust the width to make it smaller */
-  background-color: #007bff; /* Thumb color */
+  height: 15px;
+  width: 15px;
+  background-color: #007bff;
   cursor: grab;
   border-radius: 50%;
 }
